@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class User implements Serializable{
 	
 	/**
@@ -19,7 +21,12 @@ public class User implements Serializable{
 	
 	private String sex;
 	
+	@JsonIgnore
 	private LocalDate dob;
+	
+	public User() {
+		super();
+	}
 
 	public User(int id, String name, Integer age, String sex, LocalDate dob) {
 		super();

@@ -32,16 +32,29 @@ public class UserServiceImpl implements UserService{
 				.orElse(null);
 	}
 	
-	public ArrayList<User> getUsers() {
-		return null;
+	public List<User> getUsers() {
+		return users;
 	}
 	
-	public void updateUser(Long id) {
-
-	}
-	
-	public void addUser(User user) {
+	public User updateUser(User user) {
 		
+		User u = users
+				.stream()
+				.filter(u1 -> u1.getId() == user.getId())
+				.findAny()
+				.orElse(null);
+		u.setAge(user.getAge());
+		u.setDob(user.getDob());
+		u.setName(user.getName());
+		u.setSex(user.getSex());
+		
+		return u;
+	}
+	
+	public User addUser(User user) {
+		users.add(user);
+		
+		return user;
 	}
 	
 }

@@ -1,6 +1,7 @@
 package com.ust.sampleapp.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -11,10 +12,10 @@ public interface UserService {
 
 	public User getUser(int id) ;
 	
-	public ArrayList<User> getUsers();
+	public List<User> getUsers();
 	
-	public void updateUser(Long id);
+	public User updateUser(User user);
 	
-	public void addUser(User user);
+	public User addUser(User user);
 	
 }
