@@ -17,7 +17,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
   
         String name = authentication.getName();
         String password = authentication.getCredentials().toString();
-         
+        System.err.println("doing check in from github"+name);
         System.err.println("name"+name);
         System.out.println("password" + password);
             // use the credentials
