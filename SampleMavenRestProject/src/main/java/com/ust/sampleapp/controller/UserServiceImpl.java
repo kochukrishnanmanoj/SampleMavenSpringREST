@@ -16,8 +16,8 @@ public class UserServiceImpl implements UserService{
 	static List<User> createUsers() {
 		System.out.println("Inside create users");
 		users = new ArrayList<>();
-		User u = new User(1,"Manoj",33,"M",LocalDate.now());
-		User u1 = new User(2, "Baloo",31,"M",LocalDate.now());
+		User u = new User(1,"Tring",33,"M",LocalDate.now());
+		User u1 = new User(2, "Song",31,"M",LocalDate.now());
 		users.add(u);
 		users.add(u1);
 		return users;
