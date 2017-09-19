@@ -13,7 +13,7 @@ public class User implements Serializable{
 	 */
 	private static final long serialVersionUID = -4554017086897239915L;
 
-	private int id;
+	private Long id;
 	
 	private String name;
 	
@@ -28,7 +28,7 @@ public class User implements Serializable{
 		super();
 	}
 
-	public User(int id, String name, Integer age, String sex, LocalDate dob) {
+	public User(Long id, String name, Integer age, String sex, LocalDate dob) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -41,11 +41,11 @@ public class User implements Serializable{
 		return name;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

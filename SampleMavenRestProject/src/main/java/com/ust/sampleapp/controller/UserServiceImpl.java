@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.ust.sampleapp.exception.UserNotFoundException;
 import com.ust.sampleapp.pojo.User;
 
 @Component
@@ -16,20 +17,22 @@ public class UserServiceImpl implements UserService{
 	static List<User> createUsers() {
 		System.out.println("Inside create users;;;;;;;;;;;;;;;;;;;;;;;");
 		users = new ArrayList<>();
-		User u = new User(1,"Tring",33,"M",LocalDate.now());
-		User u1 = new User(2, "Song",31,"M",LocalDate.now());
+		User u = new User(1L,"Tring",33,"M",LocalDate.now());
+		User u1 = new User(2L, "Song",31,"M",LocalDate.now());
 		users.add(u);
 		users.add(u1);
 		return users;
 	}
 
-	public User getUser(int id) {
-		
-		return users
+	public User getUser(Long id)  {
+		System.err.println("inside get user -- "+ id);
+		User user = users
 				.stream()
-				.filter(user -> id == user.getId())
+				.filter(u -> id == u.getId())
 				.findAny()
 				.orElse(null);
+		
+			return user;
 	}
 	
 	public List<User> getUsers() {
